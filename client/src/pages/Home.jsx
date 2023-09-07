@@ -4,7 +4,7 @@ import axios from 'axios';
 import New from './New';
 
 
-export default function Index() {
+export default function Home() {
     const navigate = useNavigate();
     const [students, setStudents] = useState([]);
     const [display, setDisplay] = useState(false);

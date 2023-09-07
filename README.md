@@ -1,6 +1,6 @@
 # Student-Roster-List-Attendance-
 
-_**On the student roster list attendance A teacher will create an account that will be rendered into the datatbase so that the teacher's credentials are valid if not then they would have to create one.**_
+_**On the student roster list attendance a teacher will create an account that will be rendered into the datatbase so that the teacher's credentials are valid if not then they would have to create one.**_
 
 ![](/client/images/AttendanceListHomepage.png)
 

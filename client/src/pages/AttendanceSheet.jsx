@@ -1,45 +1,56 @@
-import { useRef } from "react";
-import axios from 'axios'
-import { useNavigate } from "react-router-dom";
-// import Trainers from "../components/Trainers";
+import axios from "axios"
+import { useRef } from "react"
+import { useNavigate } from "react-router-dom"
 
-function AttendanceSheet({setUser}) {
-
-    const subjectRef = useRef()
-    const bodyRef = useRef()
-
+function New() {
     const navigate = useNavigate()
+    const firstnameRef = useRef()
+    const lastnameRef = useRef()
+    const gradeRef = useRef()
+    const presentRef = useRef()
 
     async function handleSubmit(e) {
         e.preventDefault()
+        // console.log(typeof presentRef.current.checked)
+        // return
         try {
-            const newPost = {
-                subject: subjectRef.current.value,
-                body: bodyRef.current.value
+            const newStudent= {
+                firstname: firstnameRef.current.value,
+                lastname: lastnameRef.current.value,
+                grade:gradeRef.current.value,
+                present: presentRef.current.checked,
             }
-            await axios.post(`/api/posts`, newPost)
-            navigate(`/posts`)
+            console.log(newStudent)
+            //make sure you have a controller and a route for this, this will be a post, and fill your C for CRUD
+            const student = await axios.post(`/api/student`, newStudent)
+            console.log(student)
+            navigate(`/` + student.data._id)
         } catch(err) {
-            console.log(err.message)
+            console.log(err)
         }
     }
 
     return ( 
-        <>
-            <h1>Attendance Sheet for Students</h1>
+    <div>
+        <h1 >New student</h1>
             <form onSubmit={handleSubmit}>
-            {/* <h1 className='text-hover'>{trainer.name}</h1> */}
+                <label htmlFor="firstname">First name:<br />
+                <input type="text"  name="firstname" ref={firstnameRef}/><br />
+                </label>
+                <label htmlFor="lname">Last name:<br />
+                <input type= "text" name="lastname" ref={lastnameRef} /><br />
+                </label>
+                <label htmlFor="grade">Grade:<br />
+                <input type="text" name="grade" ref={gradeRef} /><br />
+                </label>
+                <label htmlFor="present">Present:<br />
+                <input type="checkbox" name="present" defaultValue={"false"} ref={presentRef} />
+                </label>
 
-                <button>Submit</button>
+                <button className="bg-red-900 rounded-full text-white m-auto px-4 py-2">Submit</button>
             </form>
-
-            <button onClick={() => {
-                localStorage.removeItem("token")
-                setUser({})
-                navigate(`/`)
-                }}>Logout</button>
-        </>
+    </div>
     );
 }
 
-export default AttendanceSheet;
+export default New;

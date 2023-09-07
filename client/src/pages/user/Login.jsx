@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -53,20 +52,17 @@ function Login() {
 
   return (
     <div className="container">
-      <h1>Teacher Login</h1>
-      <nav>
-      {/* <button className='button' onClick={() => navigate ('/Login') }>Login Page</button> */}
-      <button className='button' onClick={() => navigate ('/Signup') }>Signup Page</button>
-      </nav>
-      <form onSubmit={handleSubmit}>
-    <label htmlFor="email"><b>Email Address</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required onChange={handleChange}
-    value={form.email} />
-  
-    <label htmlFor="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required onChange={handleChange}
-    value={form.psw} />
-    <button>Submit</button>
+      <h1 className='text-center text-xl font-semibold m-4 '>Teacher Login</h1>
+      <form className='flex flex-col border rounded-xl shadow-xl mx-auto p-4' onSubmit={handleSubmit}>
+        <label className='w-fit p-4' htmlFor="email"><b>Email Address</b>
+        <input className='w-96 m-4 p-2 border' type="text" placeholder="Enter Email" name="email" required onChange={handleChange}
+        value={form.email} />
+      </label>
+        <label className='w-fit p-4' htmlFor="psw"><b>Password</b>
+        <input className='w-96 m-4 p-2 border' type="password" placeholder="Enter Password" name="password" required onChange={handleChange}
+        value={form.psw} />
+        </label>
+        <button className='bg-red-900 rounded-full text-lg-auto px-4 py-2'>Submit</button>
     </form>
   </div>
   

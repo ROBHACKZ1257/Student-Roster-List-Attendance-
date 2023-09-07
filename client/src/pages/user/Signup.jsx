@@ -30,14 +30,6 @@ function Signup() {
 
         localStorage.setItem("token", token)
 
-        // const userResponse = await axios.get('/api/users', {
-        //     headers: {
-        //       Authorization: `Bearer ${localStorage.getItem('token')}`
-        //     }
-        //   })
-
-        // setUser(userResponse.data)
-
         navigate('/posts')
 
     } catch(err) {
@@ -52,21 +44,18 @@ function Signup() {
   <div>
 
     <div className="container">
-    <h1>Signup for Teachers</h1>
-    <nav>
-      <button className='button' onClick={() => navigate ('/Login') }>Login Page</button>
-      {/* <button className='button' onClick={() => navigate ('/Signup') }>Signup Page</button> */}
-      </nav>
-      <form onSubmit={handleSubmit}>
-      <label htmlFor="email"><b>Create Email Address</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required onChange={handleChange}
-    value={form.email}/>
-  
-    <label htmlFor="password"><b>Create Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required onChange={handleChange}
-    value={form.password}/>
+    <h1 className='text-center text-xl font-semibold m-4 '>Signup for Teachers</h1>
 
-      <button>Submit</button>
+      <form className='flex flex-col w-fit border rounded-xl shadow-xl mx-auto p-4' onSubmit={handleSubmit}>
+      <label className='w-fit p-4' htmlFor="email"><b>Create Email Address</b><br/>
+    <input className='w-96 m-4 p-2 border' type="text" placeholder="Enter Email" name="email" required onChange={handleChange}
+    value={form.email}/>
+    </label>
+    <label className='w-fit p-4' htmlFor="password"><b>Create Password</b><br/>
+    <input className='w-96 m-4 p-2 border' type="password" placeholder="Enter Password" name="password" required onChange={handleChange}
+    value={form.password}/>
+    </label>
+      <button className="bg-red-900 rounded-full text-white m-auto px-4 py-2">Submit</button>
      </form>
     </div>
   </div>

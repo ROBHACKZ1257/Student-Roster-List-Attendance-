@@ -29,3 +29,23 @@ _**Buttons I added so when the user clicks on the button it will redirect them t
 _**My biggest challenge was routing the pages so they can be able to navigate from one page to another since I am used to basic HTML and javascript more than MERN stack.**_
 
 _**The takeaway I learned from this is take everything one at a time step by step, for example what steps did Jade do in order for his backend server to work properly so that his client side can display things the way he wants.**_
+
+# 1. Technologies Used:
+
+__**HTML, CSS, Javascript and MERN stack **__
+
+# 2. Tools to get started:
+
+__**Notepad, Trello and Wireframe**__
+
+# 3. Tools to get started:
+
+__**Notepad, Trello and Wireframe**__
+
+# 4.Unsolved issues:
+
+__**Not available**__
+
+# 4.Future features and enhancements:
+
+__**I want to be able to add a hamburger icon and other features to make it more user friendly.**__
